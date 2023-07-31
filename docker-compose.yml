@@ -1,0 +1,62 @@
+version: '3.2'
+
+services:
+  backend:
+    build:
+      context: backend
+      args:
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
+    depends_on:
+      - pgsql
+    ports:
+      - "21080:80"
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/var/www/app
+
+  api:
+    build:
+      context: api
+      args:
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
+    depends_on:
+      - pgsql
+    ports:
+      - "22080:80"
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/home/www-data/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/var/www/app
+
+  pgsql:
+    image: postgres:14
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=hustle_hero
+      - POSTGRES_USER=hustle
+      - POSTGRES_PASSWORD=12345678
+
+  adminer:
+    image: adminer
+    depends_on:
+      - pgsql
+    ports:
+      - "8000:8080"
+    environment:
+      - ADMINER_DESIGN=lucas-sandery
+      - ADMINER_DEFAULT_SERVER=pgsql\
+
+  redis:
+    image: redis:6-alpine
+
+volumes:
+  db-data:
+    driver: local

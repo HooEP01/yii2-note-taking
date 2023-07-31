@@ -1,0 +1,190 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: "\f0d8";
+}
+
+a.desc::after {
+    content: "\f0d7";
+}
+
+.sort-numerical a.asc:after {
+    content: "\f162";
+}
+
+.sort-numerical a.desc:after {
+    content: "\f886";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\f15d";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\f881";
+}
+
+.grid-view th,
+.grid-view td:last-child {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+/* ====== BY RYU Chua ====== */
+
+#toast-container.toast-top-right {
+    top: 60px;
+}
+
+[class*=sidebar-dark] .brand-link {
+    border-bottom: none;
+}
+
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link {
+    /*background-color: rgba(30,144,255,.2);*/
+    /*color: #fff;*/
+    font-weight: bold;
+    cursor: default;
+}
+
+.nav-sidebar > .nav-item {
+    max-width: 100%;
+}
+
+.nav-treeview>.nav-item .nav-icon.fa, .nav-treeview>.nav-item .nav-icon.fab,
+.nav-treeview>.nav-item .nav-icon.far, .nav-treeview>.nav-item .nav-icon.fas,
+.nav-treeview>.nav-item .nav-icon.glyphicon, .nav-treeview>.nav-item .nav-icon.ion {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.nav-treeview>.nav-item.active>.nav-link {
+    background-color: transparent;
+    color: rgb(255,215,0);;
+}
+
+/* Yii Grids Fixing */
+.table tr.filters td { padding: 0.4rem; }
+.grid-link + .grid-link { margin-left: 0.4rem; }
+.card-body.p-0 .table tbody>tr>td:last-of-type,
+.card-body.p-0 .table tbody>tr>th:last-of-type,
+.card-body.p-0 .table thead>tr>td:last-of-type,
+.card-body.p-0 .table thead>tr>th:last-of-type {
+    padding-right: 0.75rem;
+}
+
+.card-body.p-0 .table.table-bordered {
+    border-top: none;
+}
+
+.yii-grid .summary {
+    padding: 5px 15px;
+    font-size: .875rem;
+}
+.card-footer .summary {
+    line-height: 30px;
+    padding: 0;
+}
+
+.yii-grid .pagination {
+    margin-bottom: 0;
+}
+
+/* Yii Grids Add-on */
+.yii-grid .grid-image-column { text-align: center; }
+.yii-grid .grid-image-column hr { margin: 3px 0 1px; }
+.yii-grid .grid-image-column a.btn-update-image { font-size: 12px; }
+
+.yii-grid .grid-link {
+    color: black;
+}
